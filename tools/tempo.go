@@ -724,7 +724,6 @@ var GetTempoTraceTool = mcpgrafana.MustTool(
 	"get_tempo_trace",
 	"Retrieve a specific trace by ID",
 	getTempoTrace,
-	mcpgrafana.WithUIResource(mcpgrafana.TraceViewerResourceURI),
 	mcpgrafana.WithTitleAnnotation("Get Tempo trace"),
 	mcpgrafana.WithIdempotentHintAnnotation(true),
 	mcpgrafana.WithReadOnlyHintAnnotation(true),

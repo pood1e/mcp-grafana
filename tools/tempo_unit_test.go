@@ -851,8 +851,7 @@ func TestTempoGetTraceInteractiveOTLP(t *testing.T) {
 	structured := result.StructuredContent.(TraceViewResult)
 	assert.Len(t, structured.Spans, 2)
 	require.NotNil(t, GetTempoTraceTool.Tool.Meta)
-	ui := GetTempoTraceTool.Tool.Meta["ui"].(map[string]any)
-	assert.Equal(t, mcpgrafana.TraceViewerResourceURI, ui["resourceUri"])
+	assert.NotContains(t, GetTempoTraceTool.Tool.Meta, "ui")
 }
 
 func TestTempoGetTraceInteractiveLLM(t *testing.T) {
